@@ -1,6 +1,6 @@
-# Post-Publish Notes
+Related: [[2026-02-automated-research-evaluation-claude-code/index|Article Index]] | [[2026-02-automated-research-evaluation-claude-code/metrics-log|Metrics Log]] | [[_promotion-tracker]]
 
-Related: [[2026-01-building-saas-claude-code/index|Article Index]] | [[2026-01-building-saas-claude-code/metrics-log|Metrics Log]] | [[_promotion-tracker]]
+# Post-Publish Notes
 
 ## Engagement Metrics
 
@@ -10,15 +10,6 @@ Related: [[2026-01-building-saas-claude-code/index|Article Index]] | [[2026-01-b
 | LinkedIn |      |       |            |       |
 | Twitter  |      |       |            |       |
 | Reddit   |      |       |            |       |
-
-## Target Metrics (30 days)
-
-- Views: 1,000+
-- Read ratio: 40%+
-- Claps: 50+
-- Comments: 10+ meaningful discussions
-- Social shares: 20+
-- Bonus: Featured in Medium publication
 
 ## What Worked
 

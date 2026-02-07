@@ -1,5 +1,7 @@
 # Medium Article Outline: Building MABOA with Claude Code
 
+Related: [[2026-01-building-saas-claude-code/index|Article Index]] | [[2026-01-building-saas-claude-code/plan|Plan]] | [[style-guide]] | [[draft-versions-guide]]
+
 **Target Length:** 6-8 minutes (1,500-2,000 words)
 **Target Audience:** Developers, technical founders, AI-curious engineers
 **Tone:** Thoughtful Builder + Honest Experimenter (balanced, 65% positive / 35% challenges)

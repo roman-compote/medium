@@ -1,5 +1,7 @@
 # Social Media Promotion Posts for Medium Article
 
+Related: [[2026-01-building-saas-claude-code/index|Article Index]] | [[2026-01-building-saas-claude-code/metrics-log|Metrics Log]] | [[_promotion-tracker]]
+
 ## LinkedIn Post (Long Form - 1,300 chars max)
 
 ### Version 1: "Partnership, Not Autopilot" Angle

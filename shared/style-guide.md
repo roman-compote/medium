@@ -2,7 +2,10 @@
 
 Best practices distilled from analysis of successful Medium articles about AI-assisted development.
 
-See `shared/research/article-analysis.md` for the full source analysis.
+See [[article-analysis]] for the full source analysis.
+
+**Example articles that follow this guide:**
+- [[2026-01-building-saas-claude-code/index|Building a Production SaaS with Claude Code]] — Time Transformation hook, sprint-based journey, 65/35 tone balance
 
 ---
 
@@ -132,3 +135,11 @@ Effective title formulas:
 - **Journey + Brackets**: "From Solo Founder to Production (What Worked & What Didn't)"
 - **First Person + Promise**: "I Built X with Y — Here's the Real Story"
 - Keep under 70 characters for social media previews
+
+## Draft Versions
+
+See [[draft-versions-guide]] for the recommended version progression:
+- **v1** — Structure dump (get everything out)
+- **v2** — Structure edit (fix the narrative arc)
+- **v3** — Tone & voice pass (make it sound like you)
+- **v4** — Final polish (publication-ready)

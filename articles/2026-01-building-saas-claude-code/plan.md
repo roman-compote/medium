@@ -1,5 +1,7 @@
 # Medium Article Creation Plan
 
+Related: [[2026-01-building-saas-claude-code/index|Article Index]] | [[style-guide]] | [[article-analysis]]
+
 ## Objective
 
 Write a compelling Medium article about building MABOA (boailoop) with Claude Code, sharing practical insights and learnings for developers exploring AI-assisted development.
