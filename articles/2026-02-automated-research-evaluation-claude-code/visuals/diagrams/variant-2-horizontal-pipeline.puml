@@ -1,0 +1,55 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 12
+skinparam rectangleBorderColor black
+skinparam rectangleBackgroundColor white
+skinparam arrowColor black
+skinparam noteBorderColor black
+skinparam noteBackgroundColor #F5F5F5
+skinparam componentBorderColor black
+skinparam componentBackgroundColor white
+
+title Automated Research Evaluation — Pipeline View
+
+rectangle "**Framework\n(human, ~8 hrs)**" as framework {
+  rectangle "Research\nScope" as scope
+  rectangle "Scorecard\n18 criteria" as scorecard
+  rectangle "Eval Prompt\n197 lines" as prompt
+  rectangle "Candidate\nList (queue)" as queue
+}
+
+rectangle "**Bash Loop**" as loop #F5F5F5 {
+  rectangle "Read list\npick first\nremove row" as pick
+
+  rectangle "**Claude Code Session**\n(fresh context per platform)" as session {
+    rectangle "Research\n4 phases\n20+ searches\n10+ fetches" as research
+    rectangle "Score\n18 criteria\nvs rubrics" as score
+    rectangle "Assess\n11 scenarios\n6 hypotheses" as assess
+    rectangle "Save\nevaluation\nfile" as save
+  }
+
+  rectangle "More\ncandidates?" as check
+}
+
+rectangle "**Output**" as output {
+  rectangle "10 evaluations\n371 citations\n~73k words" as evals
+  rectangle "Obsidian\nDashboard\n(auto-generated)" as dashboard
+}
+
+scope -[hidden]down-> scorecard
+scorecard -[hidden]down-> prompt
+prompt -[hidden]down-> queue
+
+queue -right-> pick
+pick -right-> research
+research -right-> score
+score -right-> assess
+assess -right-> save
+save -right-> check
+check -up-> pick : yes
+check -right-> evals : no
+evals -right-> dashboard
+
+@enduml

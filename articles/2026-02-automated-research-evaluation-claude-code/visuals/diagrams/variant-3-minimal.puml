@@ -1,0 +1,58 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 13
+skinparam sequenceArrowColor black
+skinparam sequenceLifeLineBorderColor black
+skinparam sequenceLifeLineBackgroundColor #F5F5F5
+skinparam sequenceParticipantBorderColor black
+skinparam sequenceParticipantBackgroundColor white
+skinparam sequenceGroupBorderColor black
+skinparam sequenceGroupBackgroundColor #FAFAFA
+skinparam sequenceDividerBackgroundColor white
+skinparam sequenceDividerBorderColor black
+skinparam noteBackgroundColor white
+skinparam noteBorderColor black
+
+title Automated Research Evaluation
+
+participant "Human" as H
+participant "Bash Loop" as B
+participant "Claude Code\n(fresh session)" as C
+participant "File System" as F
+
+== One-time Setup (~8 hours) ==
+
+H -> F : Scorecard (18 criteria, weights)
+H -> F : Evaluation prompt (197 lines)
+H -> F : Candidate list (10 platforms)
+
+== Automated Evaluation (~15 min x 10) ==
+
+B -> F : Read candidate list
+loop for each platform
+  B -> C ++ : Start new session\nwith eval prompt
+  C -> C : Phase 1: Official sources
+  C -> C : Phase 2: Technical capabilities
+  C -> C : Phase 3: Community evidence
+  C -> C : Phase 4: Pricing
+  C -> C : Score 18 criteria vs rubrics
+  C -> C : Assess 11 scenarios
+  C -> F : Save evaluation file\n(650-980 lines, 14-83 sources)
+  C --> B -- : Session ends
+  B -> F : Remove platform from list
+end
+
+== Results ==
+
+note over F
+  **10 evaluation files**
+  ~73,000 words
+  371 source citations
+  Scores: 130-221 / 280
+end note
+
+H -> F : Open Obsidian dashboard\n(auto-generated comparison)
+
+@enduml

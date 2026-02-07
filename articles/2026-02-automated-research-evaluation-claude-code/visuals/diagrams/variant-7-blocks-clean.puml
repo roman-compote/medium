@@ -1,0 +1,38 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 13
+skinparam rectangleBorderColor #333333
+skinparam rectangleBackgroundColor white
+skinparam arrowColor #333333
+skinparam arrowThickness 1.5
+skinparam padding 6
+skinparam roundCorner 6
+skinparam rectangleBorderThickness 1.5
+
+rectangle "**Research Description**\nscope  |  hypotheses  |  scenarios" as RD
+
+rectangle "**Evaluation Scorecard**\n18 criteria  |  weights  |  rubrics" as ES
+
+rectangle "**Candidate List**\n10 platforms (self-depleting queue)" as CL
+
+rectangle "**Evaluation Prompt**\nresearch  |  scoring rules  |  source integrity" as EP
+
+rectangle "**Results**\n10 evaluations  |  371 citations  |  comparison dashboard" as R
+
+RD -down-> ES
+ES -down-> CL
+
+CL -right-> EP : evaluate\nnext
+
+EP -left-> CL : **the loop**\nremove platform,\nfresh context
+
+CL -down-> R : when\nempty
+
+note bottom of R
+  ~73,000 words across 10 files
+  Scores: 130-221 / 280
+end note
+
+@enduml

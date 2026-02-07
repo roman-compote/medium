@@ -1,0 +1,37 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 13
+skinparam rectangleBorderColor black
+skinparam rectangleBackgroundColor white
+skinparam arrowColor black
+skinparam arrowThickness 1.5
+skinparam roundCorner 4
+skinparam rectangle {
+  BorderThickness 1.5
+}
+
+together {
+  rectangle "**Research Description**\n\n<color:#555>scope, boundaries,</color>\n<color:#555>hypotheses</color>" as RD <<block>>
+  rectangle "**Evaluation Scorecard**\n\n<color:#555>weighted criteria,</color>\n<color:#555>rubrics, thresholds</color>" as ES <<block>>
+}
+
+rectangle "**Candidate List**\n\n<color:#555>self-depleting queue,</color>\n<color:#555>resumable state</color>" as CL <<block>>
+
+rectangle "**Evaluation Prompt**\n\n<color:#555>research phases,</color>\n<color:#555>conservative scoring,</color>\n<color:#555>source integrity</color>" as EP <<block>>
+
+rectangle "**Results**\n\n<color:#555>structured evaluations,</color>\n<color:#555>auditable sources,</color>\n<color:#555>auto-generated comparison</color>" as R <<block>>
+
+RD -down-> CL
+ES -down-> CL
+
+CL -down-> EP
+
+EP -left-> CL : **the loop**\n<color:#555>next candidate,</color>\n<color:#555>fresh context</color>
+
+EP -down-> R
+
+hide <<block>> stereotype
+
+@enduml

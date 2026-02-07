@@ -1,0 +1,30 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 14
+skinparam rectangleBorderColor black
+skinparam rectangleBackgroundColor white
+skinparam arrowColor black
+skinparam arrowThickness 1.5
+skinparam padding 8
+skinparam roundCorner 8
+
+rectangle "**Research\nDescription**\n\nscope, hypotheses,\nscenarios" as RD
+
+rectangle "**Evaluation\nScorecard**\n\n18 criteria,\nweights, rubrics" as ES
+
+rectangle "**Candidate\nList**\n\n10 platforms\n(queue)" as CL
+
+rectangle "**Evaluation\nPrompt**\n\nresearch phases,\nscoring rules,\nsource integrity" as EP
+
+rectangle "**Results**\n\n10 evaluations,\n371 citations,\ndashboard" as R
+
+RD -right-> ES
+ES -right-> CL
+CL -right-> EP
+EP -right-> R
+
+EP -up-> CL : **the loop**\nnext platform,\nfresh context
+
+@enduml

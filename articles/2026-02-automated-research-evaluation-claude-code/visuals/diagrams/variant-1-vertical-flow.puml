@@ -1,0 +1,67 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 13
+skinparam activityBorderColor black
+skinparam activityBackgroundColor white
+skinparam activityDiamondBorderColor black
+skinparam activityDiamondBackgroundColor white
+skinparam arrowColor black
+skinparam noteBorderColor black
+skinparam noteBackgroundColor white
+skinparam partitionBorderColor black
+skinparam partitionBackgroundColor #F5F5F5
+
+title Automated Research Evaluation — Process Flow
+
+|#F5F5F5|  **Human (one-time setup)**  |
+start
+:Define **Research Scope**
+  6 hypotheses, 11 scenarios;
+:Build **Evaluation Scorecard**
+  18 criteria, weighted (5x / 3x / 2x);
+:Write **Evaluation Prompt**
+  197 lines: research phases,
+  scoring rules, source integrity;
+:List **10 Candidates**
+  in markdown table (queue);
+
+|#white|  **Bash Loop (automated)**  |
+:Start loop iteration;
+
+repeat
+  :Claude Code reads
+  candidate list;
+  :Pick first platform,
+  remove from list;
+
+  |#F5F5F5|  **Claude Code session (fresh context)**  |
+  :Phase 1 — Official sources
+  docs, product pages, changelogs;
+  :Phase 2 — Technical capabilities
+  APIs, integrations, architecture;
+  :Phase 3 — Community evidence
+  reviews, GitHub issues, forums;
+  :Phase 4 — Pricing
+  plans, licensing, TCO;
+  :Score 18 criteria
+  against rubrics with sources;
+  :Assess 11 scenarios
+  + validate 6 hypotheses;
+  :Save evaluation file
+  (YAML frontmatter + citations);
+
+  |#white|  **Bash Loop (automated)**  |
+repeat while (candidates remaining?) is (yes)
+-> no;
+
+|#F5F5F5|  **Output**  |
+:10 evaluation files
+  ~73,000 words
+  371 source citations;
+:Obsidian Dataview dashboard
+  auto-generates comparison tables;
+stop
+
+@enduml
