@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, height=630">
+    <title>Medium Article Preview Image - Minimal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .preview-container {
+            width: 1200px;
+            height: 630px;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 100px;
+        }
+
+        .badge {
+            background: #000;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #000;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 28px;
+            font-weight: 400;
+            color: #666;
+            margin-bottom: 50px;
+            line-height: 1.4;
+        }
+
+        .metrics {
+            display: flex;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .tagline {
+            font-size: 22px;
+            color: #000;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .author {
+            font-size: 16px;
+            color: #999;
+            font-weight: 500;
+        }
+
+        /* Accent line */
+        .accent-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .corner-bracket {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 3px solid #000;
+        }
+
+        .corner-bracket.top-left {
+            top: 40px;
+            left: 40px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner-bracket.bottom-right {
+            bottom: 40px;
+            right: 40px;
+            border-left: none;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <div class="corner-bracket top-left"></div>
+        <div class="corner-bracket bottom-right"></div>
+
+        <div class="content">
+            <div class="badge">Claude Code</div>
+
+            <h1>Building a Production SaaS</h1>
+
+            <div class="subtitle">
+                Real lessons from 4 weeks of AI-assisted development
+            </div>
+
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-number">468</div>
+                    <div class="metric-label">Commits</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">695</div>
+                    <div class="metric-label">Tests</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">306</div>
+                    <div class="metric-label">Hours</div>
+                </div>
+            </div>
+
+            <div class="tagline">
+                Partnership > Automation
+            </div>
+
+            <div class="author">
+                A 4-Week Build in Public Journey
+            </div>
+        </div>
+
+        <div class="accent-line"></div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center; color: #666; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+        <p style="margin-bottom: 10px; font-size: 14px; font-weight: 600;">📸 MINIMAL VERSION - Clean & Professional</p>
+        <p style="font-size: 13px; color: #999; margin-bottom: 20px;">
+            White background, black text, simple layout - works well for minimalist aesthetic
+        </p>
+        <p style="font-size: 12px; color: #999;">
+            Screenshot at 1200x630px • Save as medium-preview-minimal.png
+        </p>
+    </div>
+</body>
+</html>
