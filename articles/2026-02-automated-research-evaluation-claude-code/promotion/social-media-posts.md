@@ -7,63 +7,54 @@ Related: [[2026-02-automated-research-evaluation-claude-code/index|Article Index
 ### Version 1: Story Angle
 
 ```
-Most people use Claude Code to write code.
+I needed to evaluate 10 technology platforms for a large organization.
 
-I used it to evaluate 10 technology platforms — systematically, with auditable sources, and zero hallucination tolerance.
+I know myself: the first evaluation would be thorough. By the fifth, I'd be skimming. By the tenth, I'd be scoring from memory and pretending I checked.
 
-The setup: a large organization needed to compare 10 collaborative platforms against 18 weighted criteria. Manually, this means weeks of inconsistent research where your first evaluation is thorough and your tenth is... optimistic.
+So I built a framework where Claude Code does the research while a bash loop orchestrates the whole thing. Each platform gets its own isolated session — fresh context, full attention, no bleed-over between evaluations.
 
-Instead, I built a framework:
-- An evaluation scorecard with 18 criteria (4 Critical, weighted up to 5x)
-- A 197-line evaluation prompt with source integrity rules
-- A candidate list that acts as a self-modifying queue
-- An Obsidian dashboard for automatic comparison
+The key rule: vendor claim without third-party evidence = max score 3. No evidence at all = score 1. The framework is designed to be honest, not optimistic.
 
-The automation? A single bash loop:
-for i in $(seq 1 10); do claude --print "$(cat prompt.md)"; done
+What it produced:
+- 371 auditable source citations
+- 10 evaluations, 650-980 lines each
+- Scores from 130 to 221 out of 280
+- Average: 174 — the framework isn't flattering anyone
 
-Each evaluation runs in its own context. Fresh start, full attention, no bleed-over.
+Total cost: 8 hours building the framework + 2.5 hours of automated runtime. About $2 per evaluation in API costs.
 
-The result: 371 source citations. ~73,000 words. Scores from 130-221. Average: 174/280 — the framework isn't flattering anyone.
+The manual alternative? Two weeks of inconsistent research where every evaluation measures different things at different levels of effort.
 
-Key rule: vendor claim without third-party evidence = max score 3. Conservative scoring isn't a limitation — it's a feature.
+The pattern is reusable — swap the criteria for any domain.
 
 Link in comments
 
-#ClaudeCode #AI #Automation #ResearchMethodology #TechEvaluation
+#AI #Automation #SoftwareEngineering #Productivity #DeveloperTools
 ```
 
 ### Version 2: Data Angle
 
 ```
-10 platforms. 18 criteria. 280 max score. 371 source citations. One bash loop.
+10 platforms. 18 criteria. 280 possible points. 371 source citations. One bash loop.
 
-I built an automated research evaluation framework using Claude Code + Obsidian. Here's what the numbers look like:
+I automated technology evaluations with Claude Code. Here's the breakdown:
 
-Framework:
-- 18 evaluation criteria across Business, Architecture, Functional
-- 4 Critical criteria (score <3 = disqualified)
-- Weight system: Critical 5x, High 3x, Medium 2x
+The problem: evaluating 10 platforms manually means your first is thorough and your last is assumptions. And when leadership asks "where did you get that number?" — you need a URL, not a feeling.
 
-Automation:
-- 197-line evaluation prompt (4 research phases, anti-hallucination checklist)
-- Candidate list as a queue (resumable by design)
-- Each evaluation in its own Claude Code context
+The framework: 18 weighted criteria with detailed rubrics. A 197-line evaluation prompt with 4 research phases and an anti-hallucination checklist. A markdown file as a self-modifying queue — if evaluation #7 crashes, run it again. Platforms 1-6 are already done.
 
-Output:
-- 10 complete evaluations, 650-980 lines each
-- 371 total source citations (min 14, max 83 per evaluation)
-- Scores: 130-221 out of 280
-- Average: 174 — conservative scoring works
+The scoring discipline: vendor-only claims cap at 3. Missing evidence means 1. Conservative scoring is a feature, not a limitation.
 
-What worked: source integrity rules, context isolation, structural consistency
-What didn't: context limits on large evaluations, search quality varies by product
+The output: 10 complete evaluations. 371 source citations — every URL actually visited. Scores ranged 130-221, average 174/280.
 
-The pattern is reusable for any domain — swap the criteria and candidates.
+The cost: 8 hours of human effort + ~$20 in API costs.
+The alternative: 2 weeks of manual research that degrades by platform 5.
 
-Article link in comments
+What would you evaluate with this framework?
 
-#BuildInPublic #ClaudeCode #AI #Automation #TechEvaluation
+Link in comments
+
+#AI #Automation #SoftwareEngineering #Productivity #DeveloperTools
 ```
 
 **Timing:** Tuesday-Thursday, 9 AM-12 PM EST
